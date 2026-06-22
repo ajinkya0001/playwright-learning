@@ -1,0 +1,823 @@
+QuestionAndANSWERsPW
+
+SECTION A – PLAYWRIGHT FUNDAMENTALS
+
+1. What is Software Testing and why is it important?
+2. Differentiate between Manual Testing and Automation Testing.
+3. Explain Smoke Testing and Sanity Testing.
+4. What is Regression Testing?
+5. What is End-to-End Testing?
+6. What is Playwright?
+7. What are the advantages of Playwright over Selenium?
+8. Explain Browser Architecture.
+9. Describe the HTTP Request and Response Lifecycle.
+10. What is DOM and why is it important for automation?
+
+SECTION B – LOCATORS AND UI AUTOMATION
+
+11. What are Locators in Playwright?
+12. Explain ID Locator and Name Locator.
+13. What are CSS Selectors?
+14. What is XPath?
+15. What is Relative XPath?
+16. Why are Playwright Recommended Locators preferred?
+17. Explain getByRole().
+18. Explain getByText().
+19. Explain getByLabel().
+20. Explain getByPlaceholder().
+21. How do you handle Dynamic Elements?
+22. What are Dynamic IDs?
+23. How would you automate a Login Form?
+24. How do Assertions improve test reliability?
+25. What is the difference between Visibility Assertion and Text Assertion?
+
+SECTION C – BUSINESS WORKFLOWS
+
+26. What is CRUD Operation?
+27. Explain Create Workflow Automation.
+28. Explain Search Workflow Validation.
+29. How do you validate Update Operations?
+30. How do you validate Delete Operations?
+31. How do you automate Dynamic Tables?
+32. What is Pagination Handling?
+33. How do you validate Sorting Functionality?
+34. How do you validate Filtering Functionality?
+35. Explain File Upload and File Download Automation.
+36. How do you handle Alerts and Confirmation Dialogs?
+37. What are Frames and Iframes?
+38. How do you handle Multiple Browser Tabs?
+
+SECTION D – DEBUGGING AND STABILITY
+
+39. What are Locator Failures?
+40. What are Timing Issues in Automation?
+41. Explain Synchronization Issues.
+42. What is Playwright Trace Viewer?
+43. What is Playwright Inspector?
+44. How do Screenshots help in debugging?
+45. What are Browser Console Errors?
+46. Explain Auto Wait Mechanism.
+47. What are Explicit Waits?
+48. What are Flaky Tests?
+49. How do you perform Root Cause Analysis for failed tests?
+
+SECTION E – FRAMEWORK AND ENTERPRISE CONCEPTS
+
+50. Explain Page Object Model (POM).
+51. What are Reusable Methods?
+52. Why is Test Data Management important?
+53. What is Environment Configuration?
+54. What are HTML Reports?
+55. Why should screenshots be attached to reports?
+56. Explain Git Commit and Push.
+57. What is a Pull Request?
+58. What is CI/CD?
+59. What is Jenkins used for?
+60. Explain an end-to-end project automation workflow from Login to Delete Record.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. What is Software Testing and why is it important?
+
+Answer:
+
+Software Testing is the process of verifying and validating a software application.
+It ensures that the application works according to business requirements.
+Testing helps identify defects, bugs, and issues before the software is released.
+It improves software quality, reliability, and performance.
+Testing reduces production failures and maintenance costs.
+It increases customer satisfaction by delivering a stable product.
+
+
+2. Differentiate between Manual Testing and Automation Testing.
+Answer:
+Manual Testing is performed by a human tester without using automation tools.
+Automation Testing uses tools like Playwright to execute test cases automatically.
+Manual testing is suitable for exploratory and usability testing.
+Automation testing is ideal for repetitive and regression testing.
+Automation provides faster execution and higher accuracy.
+Automation saves time and effort for large-scale projects.
+
+
+3. Explain Smoke Testing and Sanity Testing.
+
+Answer:
+
+Smoke Testing verifies whether the major functionalities of an application are working.
+It is performed on every new build before detailed testing begins.
+Sanity Testing checks specific functionality after a bug fix or minor change.
+Smoke Testing covers the overall application flow.
+Sanity Testing focuses only on affected modules.
+Both help determine whether further testing should continue.
+
+
+4. What is Regression Testing?
+
+Answer:
+
+Regression Testing ensures that existing functionality works after code changes.
+It verifies that new changes have not introduced new defects.
+It is commonly automated using Playwright.
+Regression suites are executed before releases.
+It improves application stability and reliability.
+It reduces deployment risks.
+
+
+5. What is End-to-End Testing?
+
+Answer:
+
+End-to-End Testing validates complete business workflows.
+It simulates real user actions across the application.
+It verifies integration between frontend and backend systems.
+It tests database interactions and API communication.
+It ensures the application behaves correctly from start to finish.
+It provides confidence before production deployment.
+
+
+6. What is Playwright?
+
+Answer:
+
+Playwright is an open-source automation framework developed by Microsoft.
+It supports Chromium, Firefox, and WebKit browsers.
+It is used for UI, API, and End-to-End testing.
+It provides built-in auto-waiting functionality.
+Playwright supports parallel execution.
+It works effectively with modern web applications like React and Angular.
+
+
+7. What are the advantages of Playwright over Selenium?
+
+Answer:
+
+Playwright provides built-in auto-waiting.
+It supports multiple browsers using a single API.
+It executes tests faster than Selenium.
+It includes powerful debugging tools like Trace Viewer.
+It handles modern JavaScript applications efficiently.
+It reduces flaky tests and improves stability.
+
+
+8. Explain Browser Architecture.
+
+Answer:
+
+Browser Architecture defines how browsers process and display web pages.
+The Browser Process manages tabs and user interactions.
+The Renderer Process renders webpage content.
+The Network Process handles HTTP requests and responses.
+The GPU Process handles graphics rendering.
+Understanding browser architecture helps troubleshoot automation issues.
+
+
+9. Describe the HTTP Request and Response Lifecycle.
+
+Answer:
+
+The browser sends an HTTP request to the server.
+The server receives and processes the request.
+Business logic and database operations are executed.
+The server generates an HTTP response.
+The browser receives and renders the response.
+The Network tab can be used to monitor this lifecycle.
+
+
+10. What is DOM and why is it important for automation?
+
+Answer:
+
+DOM stands for Document Object Model.
+It represents a webpage as a tree structure.
+Every HTML element becomes a node in the DOM.
+Automation tools interact with DOM elements.
+Locators are created using DOM information.
+Understanding DOM helps build reliable automation scripts.
+
+
+11. What are Locators in Playwright?
+
+Answer:
+
+Locators are used to identify web elements on a page.
+Playwright interacts with elements using locators.
+Locators are required for actions such as click and fill.
+Good locators improve script stability.
+Playwright provides built-in locator strategies.
+Reliable locators reduce maintenance effort.
+
+
+12. Explain ID Locator and Name Locator.
+
+Answer:
+
+ID Locator identifies elements using the id attribute.
+Name Locator identifies elements using the name attribute.
+IDs are usually unique within a webpage.
+Name attributes are commonly used in forms.
+Both locator types are simple and efficient.
+They improve script readability and performance.
+
+
+13. What are CSS Selectors?
+
+Answer:
+
+CSS Selectors are patterns used to locate HTML elements.
+They are faster than XPath in many cases.
+CSS can target elements using ID, class, and attributes.
+CSS selectors are easy to read and maintain.
+They are widely used in automation frameworks.
+Complex UI structures can also be handled using CSS.
+
+
+14. What is XPath?
+
+Answer:
+
+XPath is a language used to locate elements in XML and HTML documents.
+It navigates through the DOM structure.
+XPath can identify elements without IDs or classes.
+It supports parent-child and sibling relationships.
+XPath is useful for complex element identification.
+It is commonly used in automation testing.
+
+
+15. What is Relative XPath?
+
+Answer:
+
+Relative XPath starts searching from any node in the DOM.
+It is more flexible than Absolute XPath.
+It does not depend on the complete DOM path.
+Relative XPath is less likely to break after UI changes.
+It improves locator maintainability.
+It is widely recommended in automation projects.
+
+
+16. Why are Playwright Recommended Locators preferred?
+
+Answer:
+
+They are based on user-facing attributes.
+They improve script readability.
+They provide better stability than XPath.
+They are less affected by UI structure changes.
+They align with accessibility standards.
+Playwright officially recommends them as best practice.
+
+
+17. Explain getByRole().
+
+Answer:
+
+getByRole() identifies elements using accessibility roles.
+Roles include button, textbox, checkbox, and link.
+It improves test readability.
+It creates user-centric automation scripts.
+It supports accessibility testing.
+It is one of the most reliable Playwright locators.
+
+
+18. Explain getByText().
+
+Answer:
+
+getByText() locates elements using visible text.
+It is useful for buttons, labels, and messages.
+It improves script readability.
+It mimics how users identify elements.
+It reduces dependency on complex locators.
+It is recommended when text remains stable.
+
+
+19. Explain getByLabel().
+
+Answer:
+
+getByLabel() identifies form elements using labels.
+It is commonly used for input fields.
+It supports accessibility-focused testing.
+It improves locator reliability.
+It creates readable automation scripts.
+It is preferred for form automation.
+
+ 	
+20. Explain getByPlaceholder().
+
+Answer:
+
+getByPlaceholder() identifies input fields using placeholder text.
+It is useful when labels are unavailable.
+It improves script readability.
+It supports user-focused element identification.
+It reduces locator complexity.
+It is commonly used in modern web applications.
+
+
+21. How do you handle Dynamic Elements?
+
+Answer:
+
+Dynamic elements change their properties during runtime.
+Stable attributes such as text, labels, or roles should be used to identify them.
+Playwright recommended locators help handle dynamic elements effectively.
+Dynamic elements often appear in React and Angular applications.
+Auto-waiting helps interact with elements when they become available.
+Proper locator strategies reduce test failures.
+
+
+22. What are Dynamic IDs?
+
+Answer:
+
+Dynamic IDs change every time the application loads.
+They are generated automatically by the application.
+Directly using dynamic IDs can make tests unstable.
+Alternative locators such as text, role, or labels should be used.
+Relative XPath and CSS selectors can help locate such elements.
+Understanding DOM structure helps identify dynamic elements correctly.
+
+
+23. How would you automate a Login Form?
+
+Answer:
+
+Identify username and password fields using reliable locators.
+Enter valid test data into the fields.
+Click the login button using Playwright actions.
+Validate successful login using assertions.
+Verify dashboard visibility or URL changes.
+Handle both positive and negative login scenarios.
+
+
+24. How do Assertions improve test reliability?
+
+Answer:
+
+Assertions verify expected application behavior.
+They confirm whether a test has passed or failed.
+Assertions validate text, visibility, URLs, and page titles.
+They help detect defects automatically.
+Assertions improve confidence in automation results.
+Strong assertions reduce false-positive test outcomes.
+
+
+25. What is the difference between Visibility Assertion and Text Assertion?
+
+Answer:
+
+Visibility Assertion checks whether an element is displayed on the page.
+Text Assertion verifies the actual text content of an element.
+Visibility focuses on element presence.
+Text Assertion focuses on element values and messages.
+Both improve test validation accuracy.
+They are commonly used together in UI testing.
+
+
+26. What is CRUD Operation?
+
+Answer:
+
+CRUD stands for Create, Read, Update, and Delete.
+It represents the basic operations performed on application data.
+Most enterprise applications are built around CRUD functionality.
+Automation testing verifies each CRUD operation independently.
+CRUD validation ensures data integrity.
+It is one of the most common business workflows in testing.
+
+
+27. Explain Create Workflow Automation.
+
+Answer:
+
+Create Workflow automates the process of adding new records.
+Test data is entered into application forms.
+Submission actions are performed using Playwright.
+Success messages are validated using assertions.
+Database or UI validation confirms record creation.
+It ensures users can successfully create new data.
+
+
+28. Explain Search Workflow Validation.
+
+Answer:
+
+Search Workflow validates record retrieval functionality.
+Test data is entered into search fields.
+Search actions are executed.
+Returned results are verified against expected values.
+Filtering and search accuracy are validated.
+It ensures users can locate records efficiently.
+
+
+29. How do you validate Update Operations?
+
+Answer:
+
+Existing records are selected for modification.
+New data is entered into editable fields.
+Update actions are executed.
+Success messages are validated.
+Updated values are verified after saving.
+It ensures changes are stored correctly.
+
+
+30. How do you validate Delete Operations?
+
+Answer:
+
+A target record is selected for deletion.
+Delete actions are performed.
+Confirmation dialogs are handled.
+Success notifications are validated.
+Searches confirm the record no longer exists.
+It ensures data is removed correctly.
+
+
+31. How do you automate Dynamic Tables?
+
+Answer:
+
+Dynamic tables load data during runtime.
+Rows and columns are identified using locators.
+Loops are used to iterate through table data.
+Specific records are located using text validation.
+Sorting and filtering functionality can be verified.
+Assertions validate table contents accurately.
+
+
+32. What is Pagination Handling?
+
+Answer:
+
+Pagination divides large datasets into multiple pages.
+Automation scripts navigate between pages.
+Next and Previous buttons are validated.
+Record counts are verified across pages.
+Data consistency is checked after navigation.
+Pagination testing ensures proper data visibility.
+
+
+33. How do you validate Sorting Functionality?
+
+Answer:
+
+Sorting validation checks whether records appear in the correct order.
+Data is captured before and after sorting.
+Expected sorted values are compared with actual values.
+Ascending and descending sorting are tested.
+Multiple columns may be validated.
+Sorting accuracy improves user experience.
+
+
+34. How do you validate Filtering Functionality?
+
+Answer:
+
+Filters are applied using search criteria.
+Results are checked against selected filter values.
+Invalid records should not appear.
+Multiple filter combinations can be tested.
+UI and backend consistency should be verified.
+Filtering validation ensures accurate search results.
+
+
+35. Explain File Upload and File Download Automation.
+
+Answer:
+
+File Upload automation validates document submission functionality.
+Playwright can upload files using file path selection.
+Uploaded files are verified through UI validation.
+File Download automation validates downloaded content.
+Downloaded files can be verified for existence and correctness.
+Both are common requirements in enterprise applications.
+
+
+36. How do you handle Alerts and Confirmation Dialogs?
+
+Answer:
+
+Alerts are browser-generated pop-up messages.
+Playwright provides event handlers for alerts.
+Alerts can be accepted or dismissed.
+Confirmation dialogs require user decisions.
+Dialog text can be validated before action.
+Proper handling prevents test interruptions.
+
+
+37. What are Frames and Iframes?
+
+Answer:
+
+Frames allow one webpage to display another webpage.
+Iframes are embedded HTML documents within a page.
+Elements inside iframes cannot be accessed directly.
+Playwright provides frame-specific methods.
+Switching to the correct frame is required.
+Frame handling is important in enterprise applications.
+
+
+38. How do you handle Multiple Browser Tabs?
+
+Answer:
+
+Multiple tabs are created when links open new pages.
+Playwright can capture new page events.
+Scripts switch control to newly opened tabs.
+Validations are performed on the correct tab.
+Tabs can be closed after validation.
+Proper tab handling ensures workflow continuity.
+
+
+39. What are Locator Failures?
+
+Answer:
+
+Locator failures occur when elements cannot be found.
+Incorrect locators are a common cause.
+UI changes may break existing locators.
+Timing issues can also cause locator failures.
+Stable locator strategies reduce failures.
+Trace Viewer helps diagnose locator problems.
+
+
+40. What are Timing Issues in Automation?
+
+Answer:
+
+Timing issues occur when elements are not ready for interaction.
+Slow page loading may cause failures.
+Dynamic content can create synchronization problems.
+Auto-waiting helps reduce timing issues.
+Explicit waits may be used when necessary.
+Proper synchronization improves test stability.
+
+
+41. Explain Synchronization Issues.
+
+Answer:
+
+Synchronization issues occur when the test execution speed is faster than the application response time.
+Elements may not be available when Playwright tries to interact with them.
+Dynamic content loading often causes synchronization problems.
+Improper synchronization can lead to flaky tests.
+Playwright's Auto Wait feature helps reduce synchronization issues.
+Explicit waits can be used when Auto Wait is insufficient.
+
+
+42. What is Playwright Trace Viewer?
+
+Answer:
+
+Trace Viewer is a debugging tool provided by Playwright.
+It records every step executed during a test run.
+It captures screenshots, network activity, and DOM snapshots.
+It helps analyze failures by showing execution history.
+Testers can inspect actions step-by-step.
+It significantly reduces debugging time.
+
+
+43. What is Playwright Inspector?
+
+Answer:
+
+Playwright Inspector is an interactive debugging tool.
+It allows testers to execute tests step-by-step.
+It helps inspect locators and element properties.
+Test execution can be paused and resumed.
+It assists in troubleshooting locator and timing issues.
+It improves script development efficiency.
+
+
+44. How do Screenshots help in debugging?
+
+Answer:
+
+Screenshots capture the application state at a specific moment.
+They help identify UI-related issues.
+Screenshots provide visual evidence of failures.
+They are attached to reports for analysis.
+They help compare expected and actual behavior.
+They speed up defect investigation.
+
+
+45. What are Browser Console Errors?
+
+Answer:
+
+Browser Console Errors are JavaScript errors displayed in the browser console.
+They indicate issues in frontend code execution.
+Console errors can impact application functionality.
+Testers analyze console logs during debugging.
+Browser DevTools provide access to console messages.
+Identifying console errors helps improve application stability.
+
+
+46. Explain Auto Wait Mechanism.
+
+Answer:
+
+Auto Wait is a built-in Playwright feature.
+Playwright automatically waits for elements to become actionable.
+It reduces the need for manual waits.
+Auto Wait improves test reliability and stability.
+It helps prevent timing-related failures.
+It is one of Playwright’s major advantages over Selenium.
+
+
+47. What are Explicit Waits?
+
+Answer:
+
+Explicit Waits are manually added waits in automation scripts.
+They pause execution until a condition is satisfied.
+Explicit waits are useful for dynamic content.
+They should be used only when necessary.
+Excessive waits can increase execution time.
+Proper use improves synchronization and stability.
+
+
+48. What are Flaky Tests?
+
+Answer:
+
+Flaky tests produce inconsistent results.
+They may pass in one execution and fail in another.
+Timing issues are a common cause of flaky tests.
+Unstable locators can also cause flaky behavior.
+Synchronization problems increase flakiness.
+Stable scripts and proper waits help reduce flaky tests.
+
+
+49. How do you perform Root Cause Analysis for failed tests?
+
+Answer:
+
+Review the error message carefully.
+Analyze screenshots and trace files.
+Check whether locators are correct.
+Verify test data and environment configuration.
+Review network activity and console errors.
+Identify the actual reason before fixing the script.
+
+
+50. Explain Page Object Model (POM).
+
+Answer:
+
+POM is a framework design pattern used in automation testing.
+It separates page elements from test logic.
+Each page is represented by a dedicated class.
+It improves code reusability and maintainability.
+Changes to locators can be managed in one place.
+POM is widely used in enterprise automation frameworks.
+
+
+51. What are Reusable Methods?
+
+Answer:
+
+Reusable methods contain common automation actions.
+They eliminate duplicate code across test cases.
+Examples include login, logout, and navigation methods.
+Reusable methods improve maintainability.
+They reduce development effort.
+They make automation frameworks more scalable.
+
+
+52. Why is Test Data Management important?
+
+Answer:
+
+Test Data Management ensures availability of valid test data.
+It supports accurate test execution.
+Poor test data can cause false failures.
+Data consistency improves reliability.
+Different test scenarios require different datasets.
+Proper management improves testing efficiency.
+
+
+53. What is Environment Configuration?
+
+Answer:
+
+Environment Configuration defines settings used during test execution.
+Examples include URLs, credentials, and environment variables.
+Separate configurations can be maintained for Dev, QA, and Production.
+It avoids hardcoding values in scripts.
+Configuration improves flexibility and maintainability.
+Enterprise frameworks commonly use environment configuration files.
+
+
+54. What are HTML Reports?
+
+Answer:
+
+HTML Reports provide detailed test execution results.
+They display passed, failed, and skipped tests.
+Reports include execution duration and status.
+Screenshots and logs can be attached.
+HTML reports improve visibility for stakeholders.
+Playwright provides built-in HTML reporting support.
+
+
+55. Why should screenshots be attached to reports?
+
+Answer:
+
+Screenshots provide visual proof of test execution.
+They help understand failure conditions quickly.
+Developers can reproduce issues more easily.
+Screenshots improve defect reporting quality.
+They reduce debugging effort.
+Stakeholders can review failures without rerunning tests.
+
+
+56. Explain Git Commit and Push.
+
+Answer:
+
+Git is a version control system used to manage source code.
+Commit saves code changes in the local repository.
+Each commit represents a specific version of the code.
+Push uploads local commits to a remote repository.
+Git helps track code history and collaboration.
+It is widely used in automation projects.
+
+
+57. What is a Pull Request?
+
+Answer:
+
+A Pull Request is a request to merge code changes into another branch.
+It allows team members to review code before merging.
+Pull Requests improve code quality.
+They support collaboration among developers and testers.
+Review comments can be added during the process.
+Pull Requests are commonly used in GitHub and Azure DevOps.
+
+
+58. What is CI/CD?
+
+Answer:
+
+CI stands for Continuous Integration.
+CD stands for Continuous Delivery or Continuous Deployment.
+CI/CD automates build, test, and deployment processes.
+It helps detect issues early.
+Automation tests are executed automatically in pipelines.
+CI/CD improves software delivery speed and quality.
+
+
+59. What is Jenkins used for?
+
+Answer:
+
+Jenkins is an open-source CI/CD automation tool.
+It automates build and test execution.
+Jenkins integrates with Git repositories.
+It supports scheduled and trigger-based execution.
+Playwright tests can run automatically through Jenkins pipelines.
+Jenkins improves development and testing efficiency.
+
+
+60. Explain an End-to-End Project Automation Workflow from Login to Delete Record.
+
+Answer:
+
+Launch the application and perform Login using valid credentials.
+Navigate to the target module after successful authentication.
+Create a new record by entering required data.
+Search and validate the created record.
+Update the record and verify changes are saved correctly.
+Delete the record and validate successful deletion.
+Capture screenshots, logs, and reports during execution.
+Analyze failures using Trace Viewer and debugging tools if required.
